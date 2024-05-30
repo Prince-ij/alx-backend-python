@@ -5,7 +5,7 @@ Use async generator to loop
 
 import asyncio
 import random
-from tying import AsyncGenerator
+from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
