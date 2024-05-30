@@ -20,5 +20,5 @@ def task_wait_n(n: int, max_delay: int) -> List[asyncio.Task]:
     asyncio.Task
     """
 
-    tasks = [asyncio.create_task(wait_random(max_delay) for _ in range(n))]
+    tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
     return tasks
