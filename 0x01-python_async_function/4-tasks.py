@@ -9,7 +9,7 @@ from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_n(n: int, max_delay: int) -> List[asyncio.Task]:
+def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Create several tasks using wait_random
 
