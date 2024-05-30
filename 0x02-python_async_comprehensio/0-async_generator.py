@@ -3,7 +3,8 @@
 Use async generator to loop
 """
 
-import asyncio, random
+import asyncio
+import random
 
 
 async def async_generator():
