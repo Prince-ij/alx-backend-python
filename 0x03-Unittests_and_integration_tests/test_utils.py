@@ -20,13 +20,13 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
-        ({}, ("a",), 'Can\'t find path in empty map'),
-        ({"a": 1}, ("a", "b"), 'path b not present'),
-        ])
-    def test_access_nested_map_exception(self, nested_map, path, msg):
-        with self.assertRaises(KeyError) as c:
+        ({}, ("a",), "a"),
+        ({"a": 1}, ("a", "b"), "b")
+    ])
+    def test_access_nested_map_exception(self, nested_map, path, expected_key):
+        with self.assertRaises(KeyError) as context:
             access_nested_map(nested_map, path)
-        self.assertEqual(str(c.exception), msg)
+        self.assertEqual(str(context.exception), f"'{expected_key}'")
 
 
 if __name__ == '__main__':
