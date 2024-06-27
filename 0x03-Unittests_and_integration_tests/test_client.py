@@ -8,7 +8,7 @@ from client import GithubOrgClient
 
 class TestGithubOrgClient(unittest.TestCase):
     """ testing org """
-    
+
     @parameterized.expand([
         ('google', {'login': 'google'}),
         ('abc', {'login': 'abc'})
@@ -18,7 +18,7 @@ class TestGithubOrgClient(unittest.TestCase):
         """ test_org implementing """
         mock_get_json.return_value = expected
         client = GithubOrgClient(org_name)
-        self.assertEqual(client.org, expected)
+        self.assertEqual(client.org, expected, f"Failed for org: {org_name}")
         labu = f"https://api.github.com/orgs/{org_name}"
         mock_get_json.assert_called_once_with(labu)
 
